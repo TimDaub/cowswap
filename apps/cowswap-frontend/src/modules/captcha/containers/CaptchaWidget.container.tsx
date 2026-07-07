@@ -14,10 +14,11 @@ import { exchangeTurnstileToken } from '../api/captchaApi'
 import { TURNSTILE_SITE_KEY } from '../config/captcha.const'
 import { useCaptchaDebugControls } from '../hooks/useCaptchaDebugControls'
 import { logCaptcha } from '../logger'
+import { captchaErrorAtom } from '../state/captchaErrorAtom'
 
 export function CaptchaWidget(): ReactNode {
   const [captchaJwt, setCaptchaJwt] = useAtom(captchaJwtAtom)
-  const [captchaError, setCaptchaError] = useState<Error | null>(null)
+  const [captchaError, setCaptchaError] = useAtom(captchaErrorAtom)
   const { isCaptchaEnabled } = useAtomValue(featureFlagsAtom)
   const captchaRef = useRef<TurnstileInstance | undefined>(undefined)
   const exchangeRequestIdRef = useRef(0)
