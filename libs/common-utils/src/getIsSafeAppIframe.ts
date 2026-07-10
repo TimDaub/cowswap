@@ -9,7 +9,8 @@ const SAFE_APP_PREVIEW_URLS = [
 ]
 const SAFE_APP_PREVIEW_HOST_SUFFIX = '.review.5afe.dev' // Safe's per-PR review env
 const SAFE_APP_LOCAL_URL = 'http://localhost:4003'
-const SAFE_SUPPORTED_ORIGINS = [SAFE_APP_ORIGIN, ...SAFE_APP_PREVIEW_URLS, SAFE_APP_LOCAL_URL].map(
+const SAFE_APP_LOCAL_URL2 = 'http://localhost:8080'
+const SAFE_SUPPORTED_ORIGINS = [SAFE_APP_ORIGIN, ...SAFE_APP_PREVIEW_URLS, SAFE_APP_LOCAL_URL1, SAFE_APP_LOCAL_URL2].map(
   (origin) => new URL(origin).origin,
 )
 
